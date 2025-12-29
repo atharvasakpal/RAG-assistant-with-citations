@@ -7,6 +7,14 @@ from rag import graph, config, retriever
 # 1. Page Configuration
 st.set_page_config(page_title="RAG Chatbot", layout="wide")
 
+try:
+    from config import set_environment
+    set_environment()
+except ImportError:
+    # If config.py is missing (e.g., in production), 
+    # Streamlit will automatically check st.secrets for environment variables.
+    pass
+
 # 2. Session State Initialization
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = []
