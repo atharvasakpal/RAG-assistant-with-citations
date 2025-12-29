@@ -8,3 +8,4 @@ langgraph
 pypdf
 unstructured
 python-dotenv
+pysqlite3-binary
